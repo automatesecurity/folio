@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Folio</title>
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header id="toolbar" role="toolbar" aria-label="Formatting"></header>
+    <div id="tablebar" role="toolbar" aria-label="Table" hidden></div>
+    <div id="reviewbar" role="toolbar" aria-label="Review" hidden>
+      <button id="rv-track" type="button" aria-pressed="false">Track Changes</button>
+      <label>Show <select id="rv-view" aria-label="Show"><option value="markup">All Markup</option><option value="final">No Markup</option><option value="original">Original</option></select></label>
+      <span class="sep"></span>
+      <button id="rv-comment" type="button" title="New comment (Ctrl+Alt+M)">New comment</button>
+      <span class="sep"></span>
+      <button id="rv-prev" type="button">Previous</button>
+      <button id="rv-next" type="button">Next</button>
+      <button id="rv-accept" type="button">Accept</button>
+      <button id="rv-reject" type="button">Reject</button>
+      <button id="rv-accept-all" type="button">Accept all</button>
+      <button id="rv-reject-all" type="button">Reject all</button>
+      <span class="sep"></span>
+      <button id="rv-pane" type="button" aria-pressed="true">Review pane</button>
+      <span class="hf-grow"></span>
+      <button id="rv-author" type="button" title="Change your name"></button>
+      <button id="rv-close" type="button" class="rv-primary">Back to editing</button>
+    </div>
+    <div id="hfbar" role="toolbar" aria-label="Header and footer" hidden>
+      <strong id="hf-label">Header</strong>
+      <button id="hf-page" type="button">Page number</button>
+      <button id="hf-pages" type="button">Total pages</button>
+      <label><input type="checkbox" id="hf-first"> Different first page</label>
+      <button id="hf-switch" type="button">Go to footer</button>
+      <span class="hf-grow"></span>
+      <span class="hf-hint">Double-click the page or press Esc to return</span>
+      <button id="hf-close" type="button">Close header and footer</button>
+    </div>
+    <div id="findbar" hidden>
+      <input id="find-input" placeholder="Find" aria-label="Find">
+      <span id="find-count"></span>
+      <button data-find="prev" title="Previous match (Shift+Enter)">Previous</button>
+      <button data-find="next" title="Next match (Enter)">Next</button>
+      <label><input type="checkbox" id="find-case"> Match case</label>
+      <input id="replace-input" placeholder="Replace with" aria-label="Replace with">
+      <button data-find="replace">Replace</button>
+      <button data-find="all">Replace all</button>
+      <button data-find="close" aria-label="Close find" title="Close (Esc)">Close</button>
+    </div>
+    <div id="workspace">
+    <main id="desk">
+      <div id="zoomer">
+        <div id="pages"></div>
+        <div id="sheet"><div id="editor"></div></div>
+        <div id="hf-editor" hidden></div>
+      </div>
+    </main>
+    <aside id="review-pane" aria-label="Review pane" hidden>
+      <header><h2>Review</h2><span id="rv-count"></span></header>
+      <div id="rv-list"></div>
+    </aside>
+    </div>
+    <footer id="status">
+      <span id="st-pages"></span>
+      <span id="st-words"></span>
+      <button id="st-track" class="st-pill st-on" title="Turn off Track Changes" hidden>Tracking on</button>
+      <button id="st-review" class="st-pill" hidden></button>
+      <button id="st-preserved" hidden></button>
+      <span id="st-message" role="status"></span>
+      <label id="st-zoom">Zoom <input type="range" id="zoom" min="50" max="200" step="10" value="100" aria-label="Zoom"><output id="zoom-val">100%</output></label>
+    </footer>
+  </div>
+  <dialog id="modal"></dialog>
+  <div id="print-root"></div>
+  <input type="color" id="color-input" tabindex="-1" aria-hidden="true">
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

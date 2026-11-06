@@ -134,6 +134,10 @@ Folio treats every document as untrusted input.
 
 Carlito, Caladea and Liberation are bundled as metric-compatible stand-ins for Calibri, Cambria, Arial, Times New Roman and Courier New. Their licenses are in `public/fonts/licenses`.
 
+## Future enhancements
+
+- **Code signing:** The future plan is to sign Windows releases through something like the [SignPath Foundation](https://signpath.org/), which offers free code signing to qualifying open source projects.
+
 ## Author
 
 Developed by Daniel Wood. Find him on [LinkedIn](https://www.linkedin.com/in/danielewood) and [GitHub](https://github.com/automatesecurity).

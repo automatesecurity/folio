@@ -4,6 +4,8 @@ A lightweight, bloat-free desktop word processor for Microsoft Word files.
 
 Folio creates, opens, edits and saves `.docx` files without touching the parts of a document it doesn't need to change. It's a small native app built with Rust, Tauri and ProseMirror, and it has no accounts, subscriptions or cloud service.
 
+![Folio editing a Word document](folio-windows.png)
+
 ## Features
 
 - **Word files:** create, open, edit and save `.docx`, `.docm` and `.dotx`
